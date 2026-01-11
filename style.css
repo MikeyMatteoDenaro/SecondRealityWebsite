@@ -1,0 +1,251 @@
+/* ================== GLOBAL ================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000;
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+/* Background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("second.png") center/cover no-repeat;
+  opacity: 0.25;
+  z-index: -1;
+}
+
+/* ================== NAVBAR ================== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+nav a {
+  color: gold;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  text-shadow: 0 0 10px gold;
+}
+
+/* ================== HERO ================== */
+.hero {
+  height: 100vh;
+  margin-top: 70px;
+  position: relative;
+}
+
+.hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.hero-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 3.2rem;
+  color: rgba(255,215,0,0.9);
+  text-shadow: 0 0 30px gold;
+  text-align: center;
+}
+
+/* ================== SECTIONS ================== */
+section {
+  min-height: 100vh;
+  padding: 120px 10%;
+  background: rgba(0,0,0,0.7);
+}
+
+h2 {
+  color: gold;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* ================== INFO BOXEN ================== */
+.info-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.info-box {
+  background: rgba(0,0,0,0.6);
+  border: 2px solid rgba(255,215,0,0.3);
+  border-radius: 15px;
+  padding: 30px;
+  color: #f5f5f5;
+  box-shadow: 0 0 15px rgba(255,215,0,0.2);
+  transition: all 0.4s ease;
+  transform: translateY(0);
+}
+
+/* Hover Animation */
+.info-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 35px rgba(255,215,0,0.6);
+  border-color: #ffd700;
+}
+
+.info-box h3 {
+  color: gold;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+}
+
+.info-box ul {
+  list-style: none;
+}
+
+.info-box li {
+  line-height: 1.6;
+}
+
+.info-box li::before {
+  content: "✦ ";
+  color: gold;
+}
+
+.info-box p {
+  line-height: 1.7;
+}
+
+/* ================== DISCORD BUTTON ================== */
+.discord-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(45deg, #5865F2, #7289DA);
+  border-radius: 40px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 25px rgba(88,101,242,0.8);
+  transition: all 0.3s ease;
+}
+
+.discord-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(88,101,242,1);
+}
+
+/* ================== TEAM CARDS ================== */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 30px;
+}
+
+.team-card {
+  background: rgba(0,0,0,0.6);
+  border: 2px solid gold;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255,215,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 35px rgba(255,215,0,0.7);
+  border-color: #fff;
+}
+
+/* ================== MEDIA GRID ================== */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.media-item {
+  background: rgba(0,0,0,0.6);
+  border: 2px solid rgba(255,215,0,0.3);
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.media-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 35px rgba(255,215,0,0.6);
+  border-color: #ffd700;
+}
+
+.media-item video,
+.media-item img {
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.media-item p {
+  color: #f5f5f5;
+  font-weight: 500;
+}
+
+/* ================== CORNER LOGO ================== */
+.corner-gif {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 120px;
+  filter: drop-shadow(0 0 15px gold);
+  z-index: 200;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .info-box,
+  .media-item {
+    padding: 20px;
+  }
+}
